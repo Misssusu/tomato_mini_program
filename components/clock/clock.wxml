@@ -1,0 +1,4 @@
+<view class="clock">
+  <text class="message">{{message}}</text>
+  <image src="../../images/tomato.png" class="tomato"></image>
+</view>

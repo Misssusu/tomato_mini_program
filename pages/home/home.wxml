@@ -1,0 +1,46 @@
+<view class="home-wrapper">
+  <scroll-view class="list-wrapper" scroll-y="true">
+    <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+        <view class="item">
+      <view class="select"></view>
+      <text class="item-message">这是第一条</text>
+    </view>
+      <view class="button-wrapper">
+    <g-button text="创建任务" type="change"></g-button>
+  </view>
+  </scroll-view>
+  <!-- <view class="button-wrapper">
+    <g-button text="按钮" type="change" size="min"></g-button>
+  </view> -->
+  <view class="clock-wrapper">
+    <g-clock message="点击开始"></g-clock>
+  </view>
+  <g-pop-up bindconfirm="confirm" bindcancel="cancel" placeholder="理由" wx:if="{{visibile}}"></g-pop-up>
+</view>

@@ -1,0 +1,44 @@
+.popUpWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2)
+}
+.popUp {
+  width: 640rpx;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 26rpx 20rpx;
+}
+.popUp-message {
+  width: 100%;
+  height: 120rpx;
+  background: #f2f2f2;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: #737373;
+  margin-bottom: 22rpx;
+}
+.btns {
+  display: flex;
+}
+.confirm {
+  color: #F6705A;
+}
+.confirm,.cancel {
+  background: #fff;
+  flex: 1;
+  text-align: center;
+  padding: 15rpx 0;
+}
+.cancel {
+  border-left: 1px solid #F6705A;
+}
+.confirm:hover,.cancel:hover {
+  opacity: 0.9;
+}

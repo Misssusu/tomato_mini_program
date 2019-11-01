@@ -1,0 +1,9 @@
+<view class="popUpWrapper">
+  <view class="popUp">
+    <textarea placeholder="{{placeholder}}" class="popUp-message" value="{{value}}" bindinput="changeValue"></textarea>
+    <view class="btns">
+      <view class="confirm" bindtap="confirm">确定</view>
+      <view class="cancel" bindtap="cancel">取消</view>
+    </view>
+  </view>
+</view>

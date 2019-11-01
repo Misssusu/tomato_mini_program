@@ -1,0 +1,15 @@
+<!--pages/test/test.wxml-->
+<text>pages/test/test.wxml</text>
+<view wx:for="{{arr}}" wx:key="index" wx:for-item="item">
+  {{index}}: {{item}}
+</view>
+{{arr}}
+<button bindtap="addItem">添加</button>
+-------------------------
+<view wx:for="{{obj}}" wx:for-item="item" wx:key="index">
+  {{item}}
+</view>
+<button bindtap="changeObjText">按钮</button>
+-----------------------------
+<view class="{{targ  ? 'red' : ''}}">这是一段文字</view>
+<button bindtap="changeClass">按钮</button>
