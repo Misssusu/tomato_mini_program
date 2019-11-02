@@ -2,15 +2,21 @@ Component({
   properties: {
     text: {
       type: String,
-      value: ""
+      value: ''
     },
     type: {
       type: String,
-      value: "default"
+      value: 'default'
     },
     size: {
       type: String,
-      value: ""
+      value: ''
+    }
+  },
+  methods: {
+    showPopup() {
+      console.log('click clock');
+      this.triggerEvent('showPopup');
     }
   }
-})
+});

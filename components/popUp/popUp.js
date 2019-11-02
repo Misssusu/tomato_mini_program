@@ -21,7 +21,6 @@ Component({
     },
     changeValue(event) {
       this.data.value = event.detail.value;
-      // this.triggerEvent('changeValue', event.detail.value)
     }
   }
 })
