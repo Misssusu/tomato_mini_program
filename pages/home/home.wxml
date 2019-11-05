@@ -6,11 +6,11 @@
     </view>
   </scroll-view>
   <view class="line"></view>
-  <view class="button-wrapper">
+  <view class="home-button-wrapper">
     <g-button text="创建任务" bindshowPopup="showPopup"></g-button>
   </view>
   <view class="clock-wrapper">
-    <g-clock message="点击开始"></g-clock>
+    <g-clock message="点击开始" bindtap="startWork"></g-clock>
   </view>
   <g-pop-up bindconfirm="confirm" bindcancel="cancel" placeholder="理由" wx:if="{{visibile}}"></g-pop-up>
 </view>

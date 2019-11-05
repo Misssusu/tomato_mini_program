@@ -25,5 +25,10 @@ Page({
   },
   showPopup() {
     this.setData({ visibile: true})
+  },
+  startWork() {
+    wx.navigateTo({
+      url: "/pages/works/works"
+    })
   }
 })

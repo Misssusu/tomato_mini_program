@@ -46,8 +46,7 @@
   color: #333;
   font-size: 28rpx;
 }
-.button-wrapper {
-  /* margin-top: 40rpx; */
+.home-button-wrapper {
   position: fixed;
   top: 630rpx;
   left: 50%;

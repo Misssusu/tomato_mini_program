@@ -14,8 +14,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
-	"appid": "touristappid",
-	"projectname": "%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F",
+	"appid": "wx002c39c0187e860e",
+	"projectname": "FocusTodo",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

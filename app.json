@@ -1,7 +1,10 @@
 {
   "pages": [
+    "pages/binding/binding",
+    "pages/login/login",
+    "pages/my/my",
     "pages/home/home",
-    "pages/test/test",
+    "pages/works/works",
     "pages/index/index",
     "pages/logs/logs",
     "components/button/button",
@@ -21,17 +24,17 @@
     "list": [{
       "pagePath": "pages/home/home",
       "text": "专注",
-      "iconPath": "./images/home.png",
-      "selectedIconPath": "./images/home-active.png"
-    },
-    {
-      "pagePath": "pages/home/home",
-      "text": "数据统计",
       "iconPath": "./images/total.png",
       "selectedIconPath": "./images/total-active.png"
     },
     {
       "pagePath": "pages/home/home",
+      "text": "数据统计",
+      "iconPath": "./images/home.png",
+      "selectedIconPath": "./images/home-active.png"
+    },
+    {
+      "pagePath": "pages/my/my",
       "text": "我的",
       "iconPath": "./images/me.png",
       "selectedIconPath": "./images/me-active.png"

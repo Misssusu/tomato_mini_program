@@ -8,6 +8,7 @@
   margin: 0 auto;
 }
 .button:hover {opacity: 0.9}
+.button:after {border: none}
 .button.default {
   background: transparent;
   border: 2rpx solid #F6705A;
