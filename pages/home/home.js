@@ -10,6 +10,24 @@ Page({
       { id: 5, text: "这是第五条", finished: false }
     ]
   },
+  onShow() {
+    // this.getLists();
+  },
+  getLists() {
+    wx.request({
+      url: "https://gp-server.hunger-valley.com/todos?completed = false",
+      method: 'GET',
+      header: {
+        "t-app-id": "wx002c39c0187e860e",
+        "t-app-secret": "490f0375bea23fe0dcbf787f27c2c904"
+      },
+      dataType:'json',
+      success(response) {
+        console.log(response);
+
+      }
+    })
+  },
   confirm(event) {
     console.log(event.detail);
     let value = event.detail;
