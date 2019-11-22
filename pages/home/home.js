@@ -3,7 +3,8 @@ import { http } from "../../lib/http.js";
 Page({
   data: {
     visibile: false,
-    textareaValue: ""
+    textareaValue: "",
+    selectTab: ''
   },
   onShow() {
     this.getLists();
@@ -35,6 +36,24 @@ Page({
           this.hidePopup()
         })
     }
+  },
+  //删除
+  completedTodo(event){
+    let { id, index } = event.currentTarget.dataset;
+    this.setData({ selectTab : id});
+    http.put(`/todos/${id}`, {
+      completed: true
+    }).then(res => {
+      let updateTodo = res.data.resource
+      this.data.lists[index] = updateTodo
+      this.setData({ lists: this.data.lists })
+      this.setData({selectTab : ''})
+      wx.showToast({
+        title: '确认完成',
+        icon: 'success',
+        duration: 1000
+      })
+    })
   },
   hidePopup() {
     this.setData({ visibile: false })

@@ -22,10 +22,14 @@
   border-radius: 8rpx;
   margin-top: 20rpx;
 }
+.item.active{
+  opacity: 0.1;
+  transition: all 1s ease-out;
+}
 .select {
-  width: 20rpx;
-  height: 20rpx;
-  border: 2rpx solid #F8765D;
+  width: 25rpx;
+  height: 25rpx;
+  border: 4rpx solid #F8765D;
   border-radius: 50%;
   margin-right: 20rpx;
   position: relative;
@@ -58,13 +62,4 @@
   background: #EEF7F6;
   position: absolute;
   bottom: 0;
-}
-.line {
-  width: 2rpx;
-  height: 648rpx;
-  background: #F6705A;
-  position: absolute;
-  top: 0;
-  left: 30px;
-  /* right: 690rpx; */
 }

@@ -1,11 +1,21 @@
 <view class="home-wrapper">
   <scroll-view class="list-wrapper" scroll-y="true">
-    <view class="item" wx:for="{{lists}}" wx:for-item="item" wx:key="item.id">
-      <view class="select"></view>
+    <view class="item"
+          lass="{{selectTab === item.id ? 'item active'  : 'item'}}"
+          wx:for="{{lists}}"
+          wx:for-item="item"
+          wx:key="{{item.id}}"
+          wx:for-index="index"
+          wx:if="{{!item.completed}}"
+    >
+      <view class="{{selectTab === item.id? 'select active': 'select'}}"
+            bindtap="completedTodo"
+            data-index="{{index}}"
+            data-id="{{item.id}}"
+      ></view>
       <text class="item-message">{{item.description}}</text>
     </view>
   </scroll-view>
-  <view class="line"></view>
   <view class="home-button-wrapper">
     <g-button text="创建任务" bindshowPopup="showPopup"></g-button>
   </view>
