@@ -2,7 +2,7 @@
   <scroll-view class="list-wrapper" scroll-y="true">
     <view class="item" wx:for="{{lists}}" wx:for-item="item" wx:key="item.id">
       <view class="select"></view>
-      <text class="item-message">{{item.text}}</text>
+      <text class="item-message">{{item.description}}</text>
     </view>
   </scroll-view>
   <view class="line"></view>
@@ -12,5 +12,5 @@
   <view class="clock-wrapper">
     <g-clock message="点击开始" bindtap="startWork"></g-clock>
   </view>
-  <g-pop-up bindconfirm="confirm" bindcancel="cancel" placeholder="理由" wx:if="{{visibile}}"></g-pop-up>
+  <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" placeholder="理由" wx:if="{{visibile}}"></g-pop-up>
 </view>

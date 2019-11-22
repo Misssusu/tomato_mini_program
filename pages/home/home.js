@@ -1,44 +1,42 @@
+import { http } from "../../lib/http.js";
+
 Page({
   data: {
     visibile: false,
-    textareaValue: "",
-    lists: [
-      { id: 1, text: "这是第一条", finished: true },
-      { id: 2, text: "这是第二条", finished: false },
-      { id: 3, text: "这是第三条", finished: true },
-      { id: 4, text: "这是第四条", finished: false },
-      { id: 5, text: "这是第五条", finished: false }
-    ]
+    textareaValue: ""
   },
   onShow() {
-    // this.getLists();
+    this.getLists();
   },
   getLists() {
-    wx.request({
-      url: "https://gp-server.hunger-valley.com/todos?completed = false",
-      method: 'GET',
-      header: {
-        "t-app-id": "wx002c39c0187e860e",
-        "t-app-secret": "490f0375bea23fe0dcbf787f27c2c904"
-      },
-      dataType:'json',
-      success(response) {
-        console.log(response);
-
-      }
-    })
+    http.get('/todos?completed = false')
+      .then((response)=>{
+        console.log(response.data.resources);
+        if(response.data.resources.length > 0){
+          this.data.lists = response.data.resources;
+          this.setData({lists: this.data.lists})
+        }
+      })
   },
   confirm(event) {
     console.log(event.detail);
     let value = event.detail;
+    console.log(value);
     if(value) {
-      let newItem = { id: this.data.lists.length+1, text: value, finished: false};
-      this.data.lists.push(newItem);
-      this.setData(({ lists: this.data.lists }))
+      http.post('/todos',{
+          completed: false,
+          description: value
+      })
+        .then((response)=>{
+          console.log(response);
+          let todo = [response.data.resource]
+          this.data.lists = todo.concat(this.data.lists)
+          this.setData({ lists: this.data.lists })
+          this.hidePopup()
+        })
     }
-    this.setData({ visibile: false })
   },
-  cancel() {
+  hidePopup() {
     this.setData({ visibile: false })
   },
   showPopup() {
