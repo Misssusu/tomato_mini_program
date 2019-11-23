@@ -36,8 +36,8 @@
 }
 .select.active::before {
   content: "";
-  width: 12rpx;
-  height: 12rpx;
+  width: 15rpx;
+  height: 15rpx;
   background: #F8765D;
   border-radius: 50%;
   position: absolute;
