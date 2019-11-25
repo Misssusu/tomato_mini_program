@@ -2,8 +2,8 @@
   "pages": [
     "pages/login/login",
     "pages/home/home",
-    "pages/binding/binding",
     "pages/my/my",
+    "pages/binding/binding",
     "pages/works/works"
   ],
   "window": {

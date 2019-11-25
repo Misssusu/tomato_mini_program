@@ -14,9 +14,9 @@ Component({
     }
   },
   methods: {
-    showPopup() {
-      console.log('click clock');
-      this.triggerEvent('showPopup');
-    }
+    // showPopup() {
+    //   console.log('click clock');
+    //   this.triggerEvent('showPopup');
+    // }
   }
 });

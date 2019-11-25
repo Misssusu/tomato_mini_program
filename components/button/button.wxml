@@ -1,3 +1,3 @@
 <view class="button-wrapper">
-  <button class="button {{type}} {{size}}" bindtap="showPopup">{{text}}</button>
+  <button class="button {{type}} {{size}}" hover-class="hoverActive">{{text}}</button>
 </view>
