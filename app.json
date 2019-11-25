@@ -4,12 +4,7 @@
     "pages/home/home",
     "pages/binding/binding",
     "pages/my/my",
-    "pages/works/works",
-    "pages/index/index",
-    "pages/logs/logs",
-    "components/button/button",
-    "components/clock/clock",
-    "components/popUp/popUp"
+    "pages/works/works"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,12 +21,6 @@
       "text": "专注",
       "iconPath": "./images/total.png",
       "selectedIconPath": "./images/total-active.png"
-    },
-    {
-      "pagePath": "pages/home/home",
-      "text": "数据统计",
-      "iconPath": "./images/home.png",
-      "selectedIconPath": "./images/home-active.png"
     },
     {
       "pagePath": "pages/my/my",
