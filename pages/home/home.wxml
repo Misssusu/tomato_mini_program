@@ -22,5 +22,5 @@
   <view class="clock-wrapper">
     <g-clock message="点击开始" bindtap="startWork"></g-clock>
   </view>
-  <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
+  <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
 </view>

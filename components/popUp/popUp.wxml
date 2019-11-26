@@ -2,8 +2,8 @@
   <view class="popUp">
     <textarea placeholder="{{placeholder}}" class="popUp-message" value="{{value}}" bindinput="changeValue"></textarea>
     <view class="btns">
-      <view class="confirm" bindtap="confirm">确定</view>
-      <view class="cancel" bindtap="cancel">取消</view>
+      <button class="confirm" bindtap="confirm" hover-class="hoverActive" loading="{{loading}}">确定</button>
+      <button class="cancel" bindtap="cancel" hover-class="hoverActive">取消</button>
     </view>
   </view>
 </view>

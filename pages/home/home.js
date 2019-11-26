@@ -4,7 +4,8 @@ Page({
   data: {
     visibile: false,
     textareaValue: "",
-    selectTab: ''
+    selectTab: '',
+    loading: false
   },
   onShow() {
     this.getLists();
@@ -20,19 +21,18 @@ Page({
       })
   },
   confirm(event) {
-    console.log(event.detail);
     let value = event.detail;
     console.log(value);
     if(value) {
+      this.setData({loading: true});
       http.post('/todos',{
           completed: false,
           description: value
       })
         .then((response)=>{
-          console.log(response);
           let todo = [response.data.resource]
           this.data.lists = todo.concat(this.data.lists)
-          this.setData({ lists: this.data.lists })
+          this.setData({ lists: this.data.lists,loading: false })
           this.hidePopup()
         })
     }

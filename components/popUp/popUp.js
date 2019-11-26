@@ -7,6 +7,10 @@ Component({
     placeholder: {
       type: String,
       value: ""
+    },
+    loading: {
+      type: Boolean,
+      value: false
     }
   },
   data: {
@@ -14,7 +18,7 @@ Component({
   },
   methods: {
     confirm() {
-      this.triggerEvent('confirm',this.data.value)
+      this.triggerEvent('confirm',this.data.value);
     },
     cancel() {
       this.triggerEvent('cancel')
