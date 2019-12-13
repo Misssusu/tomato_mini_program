@@ -1,0 +1,67 @@
+.login {
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-avatar {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  text-align: center;
+  border: 16rpx solid #F6705A;
+  margin-top: 283rpx;
+}
+.login-name {
+  font-size: 32rpx;
+  color: #F6705A;
+  position: relative;
+  top: 22rpx;
+  width: 100%;
+  text-align: center;
+}
+.login-name:after {
+  content: "";
+  height: 4rpx;
+  position: absolute;
+  width: 20%;
+  left: 50%;
+  bottom: -8rpx;
+  transform: translateX(-50%);
+  background: #F6705A;
+}
+.login-btn {
+  margin-top: 90rpx;
+}
+.login-btn button {
+  color: #fff;
+  width: 360rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  opacity: 0.9;
+  border: none;
+  background: linear-gradient(to right,#EF9B75,#F6705A);
+  box-shadow: 0px 11px 32px 0px rgba(246, 112, 90, 0.30);
+}
+.login-pc {
+  font-size: 20rpx;
+  color: #F6705A;
+  margin-top: 46rpx;
+}
+.error-tip {
+  width: 100%;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.error-tip icon {
+  vertical-align: middle;
+}
+.error-tip text {
+  padding-left: 20rpx;
+}

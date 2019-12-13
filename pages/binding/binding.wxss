@@ -1,0 +1,39 @@
+.binding {
+  height: 100vh;
+  color: #333333;
+}
+.binding-text {
+  font-size: 32rpx;
+  margin: 83rpx 0 0 40rpx;
+}
+.binding-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 81rpx;
+}
+.binding-input-wrapper input {
+  width: 570rpx;
+  border: 2rpx solid #F6705A;
+  border-radius: 16rpx;
+  padding: 25rpx 35rpx;
+}
+.binding-input-wrapper input:last-child {
+  margin-top: 56rpx;
+}
+.binding-btn {
+  margin-top: 84rpx;
+}
+.binding-tip {
+  width: 100%;
+  color: #F6705A;
+  font-size: 20rpx;
+  margin-top: 48rpx;
+  text-align: center;
+}
+.binding-bg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

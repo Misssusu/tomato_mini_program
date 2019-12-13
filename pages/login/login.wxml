@@ -1,0 +1,14 @@
+<view class="login">
+  <open-data type="userAvatarUrl" class="login-avatar"></open-data>
+  <view class="login-name">
+    <open-data type="userNickName"></open-data>
+  </view>
+  <view class="login-btn">
+    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">登录</button>
+  </view>
+  <view class="error-tip" wx:if="{{errorTip}}">
+    <icon type="warn" size="19"></icon>
+    <text>登录失败</text>
+  </view>
+
+</view>

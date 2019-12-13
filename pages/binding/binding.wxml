@@ -1,0 +1,12 @@
+<view class="binding">
+  <view class="binding-text">绑定PC账号</view>
+  <view class="binding-input-wrapper">
+    <input></input>
+    <input></input>
+  </view>
+  <view class="binding-btn">
+    <g-button type="change" size="min" text="注册"></g-button>
+  </view>
+  <view class="binding-tip">还没有PC账号，注册吧兄弟</view>
+  <image src="../../images/tomato-bg.png" class="binding-bg"></image>
+</view>
