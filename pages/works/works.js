@@ -1,4 +1,6 @@
 import { http } from "../../lib/http.js";
+let app = getApp();
+const { transMit } = app.globalData;
 
 Page({
   timer: null,
@@ -126,5 +128,8 @@ Page({
         aborted: true
       })
     }
+  },
+  onShareAppMessage(){
+    return transMit;
   }
 });

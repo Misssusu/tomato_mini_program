@@ -1,4 +1,6 @@
 import { http } from "../../lib/http.js";
+let app = getApp();
+const { transMit } = app.globalData;
 
 Page({
   data: {
@@ -68,5 +70,8 @@ Page({
     this.setData({loadingMore: true});
     console.log('上拉加载');
     this.fetchTomatoes();
+  },
+  onShareAppMessage(){
+    return transMit;
   }
 })

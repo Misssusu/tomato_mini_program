@@ -1,5 +1,6 @@
 import { http } from "../../lib/http.js";
-
+let app = getApp();
+const { transMit } = app.globalData;
 Page({
   data: {
     visibile: false,
@@ -65,5 +66,8 @@ Page({
     wx.navigateTo({
       url: "/pages/works/works"
     })
+  },
+  onShareAppMessage(){
+    return transMit;
   }
 })

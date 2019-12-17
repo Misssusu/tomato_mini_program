@@ -1,4 +1,6 @@
 import { http } from "../../lib/http.js";
+let app = getApp();
+const { transMit } = app.globalData;
 const { app_id, app_secret } = getApp().globalData
 
 Page({
@@ -43,10 +45,6 @@ Page({
     wx.setStorageSync('X-token', response.header["X-token"])
   },
   onShareAppMessage(){
-    return {
-      title: 'Focus土豆是一个结合番茄工作法的训练专注力的应用，快来加入吧！',
-      path: 'pages/login/login',
-      imageUrl: '../../images/focus.jpg'
-    }
+    return transMit;
   }
 })
