@@ -1,26 +1,62 @@
 .home-wrapper {
-  background: #F6F6F6;
-  height: 100vh;
+  background: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+  height: 100vh;
 }
-.list-wrapper {
-  height: 552rpx;
-  position: relative;
-  z-index: 1 
-}
-.item {
-  margin: 0 auto;
+.navBar {
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.10);
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.nav-tip {
+  flex: 1;
+  padding-left: 70rpx;
+}
+.nav-hello {
+  font-size: 40rpx;
+  margin-bottom: 20rpx;
+}
+.addTask {
+  /*width: 650rpx;*/
+  flex: 1;
+  padding-right: 70rpx;
+  text-align: right;
+}
+.list-wrapper {
+  width: 100%;
+  /*flex: 1;*/
+  height: 750rpx;
+  position: relative;
+  top: 150rpx;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item {
+  display: flex;
+  /*align-items: center;*/
   background: #fff;
-  width: 650rpx;
-  padding: 20rpx 20rpx;
-  border: 2rpx solid #f6f6f6;
-  border-radius: 8rpx;
-  margin-top: 20rpx;
+  width: 100%;
+  /*margin-left: 30rpx;*/
+  /*width: 650rpx;*/
+  /*padding: 30rpx 20rpx;*/
+  /*border: 2rpx solid #f6f6f6;*/
+  /*border-bottom: 1px solid #e8e8e8;*/
+  border-radius: 16rpx;
+  /*margin-top: 20rpx;*/
+  /*border: 1px solid red;*/
 }
 .item.active{
   opacity: 0.1;
@@ -31,8 +67,10 @@
   height: 25rpx;
   border: 4rpx solid #F8765D;
   border-radius: 50%;
-  margin-right: 20rpx;
+  /*margin-right: 20rpx;*/
+  margin: 0 30rpx;
   position: relative;
+  top: 52rpx;
 }
 .select.active::before {
   content: "";
@@ -48,11 +86,22 @@
 .item-message {
   flex: 1;
   color: #333;
-  font-size: 28rpx;
+  /*font-size: 28rpx;*/
+  border-bottom: 1px solid #e8e8e8;
+  /*padding-bottom: 40rpx;*/
+  padding: 45rpx 30rpx 45rpx 0;
+  display: flex;
+  /*align-items: center;*/
+  /*border: 1px solid blue;*/
+  font-size: 35rpx;
+}
+.item-description {
+  font-size: 35rpx;
+  width: 90%;
 }
 .home-button-wrapper {
   position: fixed;
-  top: 630rpx;
+  bottom: 30rpx;
   left: 50%;
   transform: translate(-50%,-50%)
 }
@@ -62,4 +111,21 @@
   background: #EEF7F6;
   position: absolute;
   bottom: 0;
+}
+.binding-bg {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.icon-clock-2 {
+  /*color: #F8765D;*/
+  flex: 1;
+  color: #B6C4CB;
+  font-size: 45rpx;
+  text-align: right;
+}
+.icon-add {
+  color: #F8765D;
+  font-size: 70rpx;
 }

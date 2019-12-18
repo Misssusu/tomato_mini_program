@@ -7,6 +7,7 @@ Page({
     textareaValue: "",
     selectTab: '',
     loading: false
+
   },
   onShow() {
     this.getLists();

@@ -13,6 +13,7 @@ Page({
     again: false,
     reasons: "",
     type: ""
+
   },
   onShow() {
     http.post('/tomatoes').then(response => {

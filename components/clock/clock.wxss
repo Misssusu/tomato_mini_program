@@ -6,10 +6,11 @@
   color: #fff;
 }
 .tomato {
-  width: 269rpx;
-  height: 269rpx;
+  width: 340rpx;
+  height: 340rpx;
 }
 .message {
+  font-size: 40rpx;
   position: absolute;
   top: 50%;
   left: 50%;
