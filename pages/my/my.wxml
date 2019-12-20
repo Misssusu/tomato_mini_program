@@ -33,7 +33,7 @@
       </swiper-item>
 
       <swiper-item>
-        <scroll-view class="my-list" scroll-y="true" bindscrolltoupper="refreshData" bindscrolltolower="loadMoreData">
+        <scroll-view class="my-list" scroll-y="true" bindscrolltoupper="refreshData" >
           <view  class='refreshData' wx:if="{{refreshing}}">正在刷新...</view>
           <view class="my-list-item" wx:for="{{todos}}" wx:for-index="key" wx:key="index">
             <wxs src="../../lib/formattor.wxs" module="formattor"></wxs>

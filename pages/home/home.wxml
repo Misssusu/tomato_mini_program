@@ -1,41 +1,68 @@
-<view class="home-wrapper">
-  <view class="navBar">
-    <view class="nav-tip">
-      <view class="nav-hello">早上好 !</view>
-      <text>2019-12-18</text>
-    </view>
-    <view class="addTask" bindtap="showPopup">
-      <text class="iconfont icon-add"></text>
-    </view>
-  </view>
-  <scroll-view class="list-wrapper" scroll-y="true">
-    <view class="item"
-          lass="{{selectTab === item.id ? 'item active'  : 'item'}}"
-          wx:for="{{lists}}"
-          wx:for-item="item"
-          wx:key="{{item.id}}"
-          wx:for-index="index"
-          wx:if="{{!item.completed}}"
-    >
-      <view class="{{selectTab === item.id? 'select active': 'select'}}"
-            bindtap="completedTodo"
-            data-index="{{index}}"
-            data-id="{{item.id}}"
-      ></view>
-      <view class="item-message">
-<!--        {{item.description}}-->
-        <text class="item-description">{{item.description}}</text>
-        <text class="iconfont icon-clock-2" bindtap="startWork"></text>
+<view wx:if="{{!working}}">
+  <view class="home-wrapper">
+    <!--  <view class="navBar">-->
+    <!--    <view class="nav-tip">-->
+    <!--      <view class="nav-hello">早上好 !</view>-->
+    <!--      <text>2019-12-18</text>-->
+    <!--    </view>-->
+    <!--    <view class="addTask" bindtap="showPopup">-->
+    <!--      <text class="iconfont icon-add"></text>-->
+    <!--    </view>-->
+    <!--  </view>-->
+    <scroll-view class="list-wrapper" scroll-y="true" enable-flex>
+      <view class="item"
+            class="{{selectTab === item.id ? 'item active'  : 'item'}}"
+            wx:for="{{lists}}"
+            wx:for-item="item"
+            wx:key="{{item.id}}"
+            wx:for-index="index"
+      >
+        <view class="{{selectTab === item.id? 'select active': 'select'}}"
+              bindtap="completedTodo"
+              data-index="{{index}}"
+              data-id="{{item.id}}"
+        ></view>
+        <view class="item-message">
+          <text class="item-description">{{item.description}}</text>
+          <text class="iconfont icon-clock-2" bindtap="startWork"></text>
+        </view>
       </view>
-<!--      <text>开始</text>-->
+    </scroll-view>
+    <view class="btn-wrapper">
+      <view class="home-button-wrapper">
+        <g-button text="创建任务" type="change" bindtap="showPopup"></g-button>
+      </view>
+      <image src="../../images/tomato-bg.png" class="binding-bg"></image>
     </view>
-  </scroll-view>
-<!--  <image src="../../images/tomato-bg.png" class="binding-bg"></image>-->
-    <view class="home-button-wrapper">
-    <g-button text="创建任务" bindtap="showPopup"></g-button>
+
+    <!--  <view class="clock-wrapper">-->
+    <!--    <g-clock message="点击开始" bindtap="startWork"></g-clock>-->
+    <!--  </view>-->
+    <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
   </view>
-  <!--  <view class="clock-wrapper">-->
-<!--    <g-clock message="点击开始" bindtap="startWork"></g-clock>-->
-<!--  </view>-->
-  <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
+</view>
+
+
+<!--working-->
+<view>
+  <view class="works-wrapper" wx:if="{{working}}">
+    <view class="countdown">
+      <view class="tip-message">距结束还有</view>
+      <g-clock message="{{time}}"></g-clock>
+    </view>
+    <view class="works-buttons-wrapper">
+      <view class="works-button-wrapper" wx:if="{{again}}">
+        <g-button text="再来一组" type="change" size="min" bindtap="startAgain"></g-button>
+      </view>
+      <view class="works-button-wrapper" wx:if="{{!again}}">
+        <g-button text="{{timerStatus}}" type="change" size="min" bindtap="changeStatus"></g-button>
+      </view>
+      <view class="works-button-wrapper" wx:if="{{!again}}">
+        <g-button text="放弃" type="default" size="min" bindtap="showPopup" data-type="abandon"></g-button>
+      </view>
+    </view>
+    <view wx:if="{{visible}}">
+      <g-pop-up placeholder="{{reasons}}" bindconfirm="confirm" bindcancel="cancel"></g-pop-up>
+    </view>
+  </view>
 </view>

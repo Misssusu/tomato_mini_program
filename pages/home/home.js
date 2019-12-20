@@ -1,19 +1,19 @@
 import { http } from "../../lib/http.js";
-let app = getApp();
+const app = getApp();
 const { transMit } = app.globalData;
 Page({
   data: {
     visibile: false,
     textareaValue: "",
     selectTab: '',
-    loading: false
-
+    loading: false,
+    working: false
   },
   onShow() {
     this.getLists();
   },
   getLists() {
-    http.get('/todos?completed = false')
+    http.get('/todos')
       .then((response)=>{
         console.log(response.data.resources);
         if(response.data.resources.length > 0){
@@ -61,12 +61,14 @@ Page({
     this.setData({ visibile: false })
   },
   showPopup() {
-    this.setData({ visibile: true})
+    this.setData({ visibile: true })
   },
   startWork() {
-    wx.navigateTo({
-      url: "/pages/works/works"
-    })
+    this.setData({ working: true })
+    console.log(this.data.working);
+    // wx.navigateTo({
+    //   url: "/pages/works/works"
+    // })
   },
   onShareAppMessage(){
     return transMit;

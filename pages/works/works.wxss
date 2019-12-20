@@ -1,7 +1,6 @@
 .works-wrapper {
   height: 100vh;
-  /*background: #EEF7F6;*/
-  background: #fff;
+  background: #EEF7F6;
   display: flex;
   align-items: center;
   flex-direction: column;

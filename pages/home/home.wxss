@@ -1,5 +1,5 @@
 .home-wrapper {
-  background: #fff;
+  background: #F6F6F6;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,25 +38,26 @@
   /*flex: 1;*/
   height: 750rpx;
   position: relative;
-  top: 150rpx;
+  /*top: 150rpx;*/
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  /*justify-content: space-between;*/
 }
 .item {
   display: flex;
-  /*align-items: center;*/
+  align-items: center;
   background: #fff;
-  width: 100%;
+  /*width: 100%;*/
   /*margin-left: 30rpx;*/
-  /*width: 650rpx;*/
-  /*padding: 30rpx 20rpx;*/
-  /*border: 2rpx solid #f6f6f6;*/
+  width: 650rpx;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #f6f6f6;
   /*border-bottom: 1px solid #e8e8e8;*/
   border-radius: 16rpx;
-  /*margin-top: 20rpx;*/
-  /*border: 1px solid red;*/
+  margin-top: 20rpx;
+  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.10);
 }
 .item.active{
   opacity: 0.1;
@@ -69,8 +70,8 @@
   border-radius: 50%;
   /*margin-right: 20rpx;*/
   margin: 0 30rpx;
-  position: relative;
-  top: 52rpx;
+  /*position: relative;*/
+  /*top: 52rpx;*/
 }
 .select.active::before {
   content: "";
@@ -87,11 +88,11 @@
   flex: 1;
   color: #333;
   /*font-size: 28rpx;*/
-  border-bottom: 1px solid #e8e8e8;
+  /*border-bottom: 1px solid #e8e8e8;*/
   /*padding-bottom: 40rpx;*/
-  padding: 45rpx 30rpx 45rpx 0;
+  /*padding: 45rpx 30rpx 45rpx 0;*/
   display: flex;
-  /*align-items: center;*/
+  align-items: center;
   /*border: 1px solid blue;*/
   font-size: 35rpx;
 }
@@ -101,9 +102,15 @@
 }
 .home-button-wrapper {
   position: fixed;
-  bottom: 30rpx;
+  bottom: 240rpx;
   left: 50%;
+  z-index: 1;
   transform: translate(-50%,-50%)
+}
+.btn-wrapper {
+  width: 100%;
+  flex: 1;
+  background: #EEF7F6;
 }
 .clock-wrapper {
   width: 710rpx;
@@ -121,7 +128,8 @@
 .icon-clock-2 {
   /*color: #F8765D;*/
   flex: 1;
-  color: #B6C4CB;
+  /*color: #B6C4CB;*/
+
   font-size: 45rpx;
   text-align: right;
 }
@@ -129,3 +137,31 @@
   color: #F8765D;
   font-size: 70rpx;
 }
+
+
+
+.works-wrapper {
+  height: 100vh;
+  background: #EEF7F6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.countdown {
+  width: 100%;
+}
+.tip-message {
+  font-size: 30rpx;
+  color: #F87A5F;
+  text-align: center;
+  margin-top: 180rpx;
+  margin-bottom: 70rpx;
+}
+.works-buttons-wrapper {
+  margin-top: 116rpx;
+  width: 100%;
+}
+.works-button-wrapper:not(:first-child) {
+  margin-top: 48rpx;
+}
+

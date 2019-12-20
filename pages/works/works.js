@@ -7,7 +7,7 @@ Page({
   data: {
     time: "",
     tomato: {},
-    defaultTime: 1500,
+    defaultTime: 5,
     timerStatus: "暂停",
     visible: false,
     again: false,
@@ -73,6 +73,7 @@ Page({
     }
     switch (this.data.type) {
       case "abandon":
+        this.stopTimer();
         this.data.reasons = "放弃理由";
         this.setData({reasons: this.data.reasons})
         break
