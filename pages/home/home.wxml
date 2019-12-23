@@ -49,7 +49,7 @@
     <view class="countdown">
       <view class="tip-message">距结束还有</view>
       <g-clock message="{{time}}"></g-clock>
-    </view>
+      </view>
     <view class="works-buttons-wrapper">
       <view class="works-button-wrapper" wx:if="{{again}}">
         <g-button text="再来一组" type="change" size="min" bindtap="startAgain"></g-button>
