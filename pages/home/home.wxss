@@ -130,7 +130,6 @@
   /*color: #F8765D;*/
   flex: 1;
   /*color: #B6C4CB;*/
-
   font-size: 45rpx;
   text-align: right;
 }
