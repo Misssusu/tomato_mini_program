@@ -61,6 +61,7 @@
 }
 .error-tip icon {
   vertical-align: middle;
+  font-size: 12rpx;
 }
 .error-tip text {
   padding-left: 20rpx;

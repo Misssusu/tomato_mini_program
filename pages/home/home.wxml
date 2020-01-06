@@ -34,7 +34,7 @@
       </view>
       <image src="../../images/tomato-bg.png" class="binding-bg"></image>
     </view>
-
+    <view class="tipMessage">{{tipMessage}}</view>
     <!--  <view class="clock-wrapper">-->
     <!--    <g-clock message="点击开始" bindtap="startWork"></g-clock>-->
     <!--  </view>-->
@@ -52,17 +52,17 @@
       </view>
     <view class="works-buttons-wrapper">
       <view class="works-button-wrapper" wx:if="{{again}}">
-        <g-button text="再来一组" type="change" size="min" bindtap="startAgain"></g-button>
+        <g-button text="返回" type="change" size="min" bindtap="startAgain"></g-button>
       </view>
       <view class="works-button-wrapper" wx:if="{{!again}}">
-        <g-button text="{{timerStatus}}" type="change" size="min" bindtap="changeStatus"></g-button>
+        <g-button text="暂停" type="change" size="min"></g-button>
       </view>
       <view class="works-button-wrapper" wx:if="{{!again}}">
-        <g-button text="放弃" type="default" size="min" bindtap="showPopup" data-type="abandon"></g-button>
+        <g-button text="放弃" type="default" size="min" bindtap="showAbandonPopup" data-type="abandon"></g-button>
       </view>
     </view>
     <view wx:if="{{visible}}">
-      <g-pop-up placeholder="{{reasons}}" bindconfirm="confirm" bindcancel="cancel"></g-pop-up>
+      <g-pop-up placeholder="{{reasons}}" bindconfirm="workConfirm" bindcancel="cancel"></g-pop-up>
     </view>
   </view>
 </view>
