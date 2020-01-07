@@ -14,7 +14,7 @@
             class="{{selectTab === item.id ? 'item active'  : 'item'}}"
             wx:for="{{lists}}"
             wx:for-item="item"
-            wx:key="{{item.id}}"
+            wx:key="id"
             wx:for-index="index"
       >
         <view class="{{selectTab === item.id? 'select active': 'select'}}"
@@ -23,7 +23,9 @@
               data-id="{{item.id}}"
         ></view>
         <view class="item-message">
-          <text class="item-description">{{item.description}}</text>
+          <text class="item-description" data-index="{{index}}"
+                data-id="{{item.id}}"
+                bindtap="updateTodo">{{item.description}}</text>
           <text class="iconfont icon-clock-2" bindtap="startWork"></text>
         </view>
       </view>
@@ -39,6 +41,9 @@
     <!--    <g-clock message="点击开始" bindtap="startWork"></g-clock>-->
     <!--  </view>-->
     <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
+    <view wx:if="{{updateVisible}}">
+      <g-pop-up popUpMessage="{{newsTodo}}" bindconfirm="confirmUpdate" bindcancel="updateCancel"></g-pop-up>
+    </view>
   </view>
 </view>
 

@@ -1,6 +1,6 @@
 <view class="popUpWrapper">
   <view class="popUp">
-    <textarea placeholder="{{placeholder}}" class="popUp-message" value="{{value}}" bindinput="changeValue"></textarea>
+    <textarea placeholder="{{placeholder}}" auto-focus="true" class="popUp-message" value="{{popUpMessage}}" bindinput="changeValue"></textarea>
     <view class="btns">
       <button class="confirm" bindtap="confirm" hover-class="hoverActive" loading="{{loading}}">确定</button>
       <button class="cancel" bindtap="cancel" hover-class="hoverActive">取消</button>
