@@ -5,7 +5,7 @@
   </view>
   <view class="works-buttons-wrapper">
     <view class="works-button-wrapper" wx:if="{{again}}">
-      <g-button text="再来一组" type="change" size="min" bindtap="startAgain"></g-button>
+      <g-button text="返回" type="change" size="min" bindtap="startAgain"></g-button>
     </view>
     <view class="works-button-wrapper" wx:if="{{!again}}">
       <g-button text="{{timerStatus}}" type="change" size="min" bindtap="changeStatus"></g-button>

@@ -53,6 +53,7 @@
   border-radius: 16rpx;
   margin-top: 20rpx;
   box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.10);
+  transition: all 1s ease-out;
 }
 .item.active{
   opacity: 0.1;
@@ -68,17 +69,21 @@
   /*position: relative;*/
   /*top: 52rpx;*/
 }
-.select.active::before {
-  content: "";
-  width: 15rpx;
-  height: 15rpx;
-  background: #F8765D;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+.select.active {
+  background: #FE996F;
+  transition: all 1s ease-out;
 }
+/*.select.active::before {*/
+/*  content: "";*/
+/*  width: 15rpx;*/
+/*  height: 15rpx;*/
+/*  background: #F8765D;*/
+/*  border-radius: 50%;*/
+/*  position: absolute;*/
+/*  top: 50%;*/
+/*  left: 50%;*/
+/*  transform: translate(-50%,-50%);*/
+/*}*/
 .item-message {
   flex: 1;
   color: #333;
@@ -122,39 +127,5 @@
 .icon-add {
   color: #F8765D;
   font-size: 70rpx;
-}
-
-
-.works-wrapper {
-  height: 100vh;
-  background: #EEF7F6;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.countdown {
-  width: 100%;
-}
-.tip-message {
-  font-size: 30rpx;
-  color: #F87A5F;
-  text-align: center;
-  margin-top: 180rpx;
-  margin-bottom: 70rpx;
-}
-.works-buttons-wrapper {
-  margin-top: 116rpx;
-  width: 100%;
-}
-.works-button-wrapper:not(:first-child) {
-  margin-top: 48rpx;
-}
-.tipMessage {
-  position: relative;
-  bottom: 50rpx;
-  padding: 0 50rpx;
-  text-align: center;
-  line-height: 50rpx;
-  color: #333;
 }
 

@@ -66,19 +66,22 @@ Page({
   completedTodo(event) {
     let { id, index } = event.currentTarget.dataset;
     this.setData({ selectTab: id });
-    http.put(`/todos/${id}`, {
-      completed: true
-    }).then(res => {
-      let updateTodo = res.data.resource;
-      this.data.lists[index] = updateTodo;
-      this.setData({ lists: this.data.lists });
-      this.setData({ selectTab: '' });
-      wx.showToast({
-        title: '确认完成',
-        icon: 'success',
-        duration: 1000
+    setTimeout(()=>{
+      http.put(`/todos/${id}`, {
+        completed: true
+      }).then(res => {
+        // console.log(res.data.resource);
+        let updateTodo = res.data.resource;
+        this.data.lists[index] = updateTodo;
+        this.setData({ lists: this.data.lists });
+        this.setData({ selectTab: '' });
+        wx.showToast({
+          title: '确认完成',
+          icon: 'success',
+          duration: 1000
+        });
       });
-    });
+    },1000)
   },
   //更新
   updateTodo(event) {
@@ -120,18 +123,21 @@ Page({
     this.setData({ visibile: true });
   },
   startWork() {
-    this.setData({ working: true });
-    wx.vibrateLong({});
-    http.post('/tomatoes').then(response => {
-      this.data.tomato = response.data.resource;
-      console.log(this.data.tomato);
-    });
-    if (this.data.defaultTime) {
-      this.startTimer();
-    }
-    // wx.navigateTo({
-    //   url: "/pages/works/works"
+    // this.setData({ working: true });
+    // wx.redirectTo({
+    //   url: '/pages/works/works'
     // })
+    // wx.vibrateLong({});
+    // http.post('/tomatoes').then(response => {
+    //   this.data.tomato = response.data.resource;
+    //   console.log(this.data.tomato);
+    // });
+    // if (this.data.defaultTime) {
+    //   this.startTimer();
+    // }
+    wx.navigateTo({
+      url: "/pages/works/works"
+    })
   },
   onShareAppMessage() {
     return transMit;
@@ -230,23 +236,24 @@ Page({
     // this.startTimer();
     this.setData({ again: false });
     this.setData({ working: false });
-  },
-  onHide() {
-    if (this.data.defaultTime) {
-      this.stopTimer();
-      http.put(`/tomatoes/${this.tomato.id}`, {
-        description: '退出放弃',
-        aborted: true
-      });
-    }
-  },
-  onUnload() {
-    if (this.data.defaultTime) {
-      this.stopTimer();
-      http.put(`/tomatoes/${this.tomato.id}`, {
-        description: '退出放弃',
-        aborted: true
-      });
-    }
   }
+  // onHide() {
+  //   console.log('onhide');
+  //   if (this.data.defaultTime) {
+  //     this.stopTimer();
+  //     http.put(`/tomatoes/${this.tomato.id}`, {
+  //       description: '退出放弃',
+  //       aborted: true
+  //     });
+  //   }
+  // },
+  // onUnload() {
+  //   if (this.data.defaultTime) {
+  //     this.stopTimer();
+  //     http.put(`/tomatoes/${this.tomato.id}`, {
+  //       description: '退出放弃',
+  //       aborted: true
+  //     });
+  //   }
+  // }
 });

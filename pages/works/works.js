@@ -20,6 +20,7 @@ Page({
       console.log(this.data.tomato);
     })
     if(this.data.defaultTime){
+      wx.vibrateLong({});
       this.startTimer()
     }
   },
@@ -30,7 +31,7 @@ Page({
         wx.vibrateLong({});
         this.setData({again: true})
         this.stopTimer();
-        this.showPopup('event','finished');
+        // this.showPopup('event','finished');
         return
       }
       this.changeTimer();
@@ -108,14 +109,20 @@ Page({
     }
   },
   startAgain() {
-    this.data.defaultTime = 1500;
-    this.startTimer();
-    this.setData({again: false})
+    // this.data.defaultTime = 1500;
+    // this.startTimer();
+    // this.setData({again: false});
+    // wx.redirectTo({
+    //   url: '/pages/home/home'
+    // })
+    wx.navigateBack({})
+    console.log('to home');
   },
   onHide() {
+    console.log(this.data.tomato);
     if (this.data.defaultTime) {
       this.stopTimer()
-      http.put(`/tomatoes/${this.tomato.id}`, {
+      http.put(`/tomatoes/${this.data.tomato.id}`, {
         description: "退出放弃",
         aborted: true
       })
@@ -124,7 +131,7 @@ Page({
   onUnload() {
     if (this.data.defaultTime) {
       this.stopTimer()
-      http.put(`/tomatoes/${this.tomato.id}`, {
+      http.put(`/tomatoes/${this.data.tomato.id}`, {
         description: "退出放弃",
         aborted: true
       })

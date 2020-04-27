@@ -41,6 +41,7 @@
 }
 .my-content {
   margin-top: 23rpx;
+  background: #F6F6F6;
 }
 .my-nav {
   display: flex;
@@ -59,7 +60,7 @@
   color: #F6705A;
 }
 .my-list {
-  height: 790rpx;
+  height: 800rpx;
 }
 .my-list-item {
   width: 610rpx;

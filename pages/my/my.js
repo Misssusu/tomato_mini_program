@@ -16,7 +16,7 @@ Page({
     this.fetchTodos()
   },
   fetchTomatoes() { //完成的任务
-    http.get('/tomatoes', { is_group: "yes" })
+    http.get('/todos', { is_group: "yes" })
       .then(response => {
         console.log(response);
         this.setData({ tomatoes: response.data.resources,refreshing: false,loadingMore: false });

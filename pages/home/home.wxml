@@ -16,6 +16,7 @@
             wx:for-item="item"
             wx:key="id"
             wx:for-index="index"
+            wx:if="{{!item.completed}}"
       >
         <view class="{{selectTab === item.id? 'select active': 'select'}}"
               bindtap="completedTodo"
@@ -36,38 +37,13 @@
       </view>
       <image src="../../images/tomato-bg.png" class="binding-bg"></image>
     </view>
-    <view class="tipMessage">{{tipMessage}}</view>
+<!--    <view class="tipMessage">{{tipMessage}}</view>-->
     <!--  <view class="clock-wrapper">-->
     <!--    <g-clock message="点击开始" bindtap="startWork"></g-clock>-->
     <!--  </view>-->
     <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
     <view wx:if="{{updateVisible}}">
       <g-pop-up popUpMessage="{{newsTodo}}" bindconfirm="confirmUpdate" bindcancel="updateCancel"></g-pop-up>
-    </view>
-  </view>
-</view>
-
-
-<!--working-->
-<view>
-  <view class="works-wrapper" wx:if="{{working}}">
-    <view class="countdown">
-      <view class="tip-message">距结束还有</view>
-      <g-clock message="{{time}}"></g-clock>
-      </view>
-    <view class="works-buttons-wrapper">
-      <view class="works-button-wrapper" wx:if="{{again}}">
-        <g-button text="返回" type="change" size="min" bindtap="startAgain"></g-button>
-      </view>
-      <view class="works-button-wrapper" wx:if="{{!again}}">
-        <g-button text="暂停" type="change" size="min"></g-button>
-      </view>
-      <view class="works-button-wrapper" wx:if="{{!again}}">
-        <g-button text="放弃" type="default" size="min" bindtap="showAbandonPopup" data-type="abandon"></g-button>
-      </view>
-    </view>
-    <view wx:if="{{visible}}">
-      <g-pop-up placeholder="{{reasons}}" bindconfirm="workConfirm" bindcancel="cancel"></g-pop-up>
     </view>
   </view>
 </view>

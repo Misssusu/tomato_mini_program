@@ -11,19 +11,24 @@
   </view>
   <view class="my-content">
     <view class="my-nav">
-      <text class="my-history {{tab == 0? 'historyActive': ''}}" bindtap="changeTab" data-type="0">番茄历史</text>
-      <text class="my-complete {{tab == 1? 'completeActive': ''}}" bindtap="changeTab" data-type="1">我完成的任务</text>
+      <text class="my-history {{tab == 0? 'historyActive': ''}}" bindtap="changeTab" data-type="0">我完成的任务</text>
+      <text class="my-complete {{tab == 1? 'completeActive': ''}}" bindtap="changeTab" data-type="1">任务历史列表</text>
     </view>
     <view class=' {{ tab == "1" ? "active afterTabs" : "afterTabs"  }}' ></view>
     <swiper current="{{tab}}" bindchange="swiperChange" class="swiper-wrapper">
+
       <swiper-item>
-        <scroll-view class="my-list" scroll-y="true" bindscrolltoupper="refreshData" bindscrolltolower="loadMoreData">
+        <scroll-view class="my-list" scroll-y="true" bindscrolltoupper="refreshData" >
           <view  class='refreshData' wx:if="{{refreshing}}">正在刷新...</view>
-          <view class="my-list-item" wx:for="{{tomatoes}}"  wx:for-index="key" wx:key="index">
+          <view class="my-list-item"
+                wx:for="{{todos}}"
+                wx:for-index="key"
+                wx:key="index"
+          >
             <wxs src="../../lib/formattor.wxs" module="formattor"></wxs>
             <view class="my-list-item-week">{{formattor.monthFormat(key)}}</view>
-            <view class="my-list-item-detail" wx:for="{{tomatoes[key]}}" wx:if="{{item.description}}" wx:for-index="index" wx:key="index">
-              <text class="my-list-item-time">{{formattor.dateFormat(item.created_at,"hh:mm")}}</text>
+            <view class="my-list-item-detail" wx:for="{{todos[key]}}" wx:if="{{item.completed}}" wx:for-index="index" wx:key="index">
+              <text class="my-list-item-time">{{formattor.dateFormat(item.updated_at,"hh:mm")}}</text>
               <text class="my-list-item-msg">{{item.description}}</text>
             </view>
           </view>
@@ -32,14 +37,15 @@
         </scroll-view>
       </swiper-item>
 
+
       <swiper-item>
-        <scroll-view class="my-list" scroll-y="true" bindscrolltoupper="refreshData" >
+        <scroll-view class="my-list" scroll-y="true" bindscrolltoupper="refreshData" bindscrolltolower="loadMoreData">
           <view  class='refreshData' wx:if="{{refreshing}}">正在刷新...</view>
-          <view class="my-list-item" wx:for="{{todos}}" wx:for-index="key" wx:key="index">
+          <view class="my-list-item" wx:for="{{tomatoes}}"  wx:for-index="key" wx:key="index" wx:for-item="items">
             <wxs src="../../lib/formattor.wxs" module="formattor"></wxs>
             <view class="my-list-item-week">{{formattor.monthFormat(key)}}</view>
-            <view class="my-list-item-detail" wx:for="{{todos[key]}}" wx:if="{{item.completed}}" wx:for-index="index" wx:key="index">
-              <text class="my-list-item-time">{{formattor.dateFormat(item.created_at,"hh:mm")}}</text>
+            <view class="my-list-item-detail" wx:for="{{tomatoes[key]}}" wx:for-index="index" wx:key="index">
+              <text class="my-list-item-time">{{formattor.dateFormat(item.updated_at,"hh:mm")}}</text>
               <text class="my-list-item-msg">{{item.description}}</text>
             </view>
           </view>
