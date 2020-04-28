@@ -58,19 +58,6 @@ Page({
         break
     }
   },
-  refreshData(){
-    wx.startPullDownRefresh();
-    wx.showNavigationBarLoading();
-    this.setData({refreshing: true});
-    console.log('下拉刷新');
-    this.fetchTomatoes();
-  },
-  // loadMoreData(){
-  //   wx.showNavigationBarLoading();
-  //   this.setData({loadingMore: true});
-  //   console.log('上拉加载');
-  //   this.fetchTomatoes();
-  // },
   onShareAppMessage(){
     return transMit;
   }
