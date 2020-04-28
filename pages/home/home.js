@@ -22,7 +22,6 @@ Page({
   getLists() {
     http.get('/todos?completed = false')
       .then((response) => {
-        console.log(response.data.resources);
         if (response.data.resources.length > 0) {
           this.data.lists = response.data.resources;
           this.setData({ lists: this.data.lists });
