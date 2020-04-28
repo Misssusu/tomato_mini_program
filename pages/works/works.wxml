@@ -4,17 +4,17 @@
     <g-clock message="{{time}}"></g-clock>
   </view>
   <view class="works-buttons-wrapper">
-    <view class="works-button-wrapper" wx:if="{{again}}">
-      <g-button text="返回" type="change" size="min" bindtap="startAgain"></g-button>
+    <view class="works-button-wrapper" wx:if="{{completed}}">
+      <g-button text="返回" type="change" size="min" bindtap="backToHomePage"></g-button>
     </view>
-    <view class="works-button-wrapper" wx:if="{{!again}}">
+    <view class="works-button-wrapper" wx:if="{{!completed}}">
       <g-button text="{{timerStatus}}" type="change" size="min" bindtap="changeStatus"></g-button>
     </view>
-    <view class="works-button-wrapper" wx:if="{{!again}}">
+    <view class="works-button-wrapper" wx:if="{{!completed}}">
       <g-button text="放弃" type="default" size="min" bindtap="showPopup" data-type="abandon"></g-button>
     </view>
   </view>
   <view wx:if="{{visible}}">
-    <g-pop-up placeholder="{{reasons}}" bindconfirm="confirm" bindcancel="cancel"></g-pop-up>
+    <g-pop-up placeholder="放弃理由" bindconfirm="confirm" bindcancel="cancel"></g-pop-up>
   </view>
 </view>

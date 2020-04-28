@@ -13,19 +13,9 @@ Page({
     textareaValue: '',
     selectTab: '',
     loading: false,
-    working: false,
     tipMessage: '',
     updateVisible: false,
     newsTodo: '',
-
-    time: '',
-    tomato: {},
-    defaultTime: 5,
-    timerStatus: '暂停',
-    visible: false,
-    again: false,
-    reasons: '',
-    type: ''
   },
   onShow() {
     console.log('list');
@@ -123,18 +113,6 @@ Page({
     this.setData({ visibile: true });
   },
   startWork() {
-    // this.setData({ working: true });
-    // wx.redirectTo({
-    //   url: '/pages/works/works'
-    // })
-    // wx.vibrateLong({});
-    // http.post('/tomatoes').then(response => {
-    //   this.data.tomato = response.data.resource;
-    //   console.log(this.data.tomato);
-    // });
-    // if (this.data.defaultTime) {
-    //   this.startTimer();
-    // }
     wx.navigateTo({
       url: "/pages/works/works"
     })
@@ -230,30 +208,5 @@ Page({
     if (this.data.type === 'abandon') {
       this.startTimer();
     }
-  },
-  startAgain() {
-    this.data.defaultTime = 1500;
-    // this.startTimer();
-    this.setData({ again: false });
-    this.setData({ working: false });
   }
-  // onHide() {
-  //   console.log('onhide');
-  //   if (this.data.defaultTime) {
-  //     this.stopTimer();
-  //     http.put(`/tomatoes/${this.tomato.id}`, {
-  //       description: '退出放弃',
-  //       aborted: true
-  //     });
-  //   }
-  // },
-  // onUnload() {
-  //   if (this.data.defaultTime) {
-  //     this.stopTimer();
-  //     http.put(`/tomatoes/${this.tomato.id}`, {
-  //       description: '退出放弃',
-  //       aborted: true
-  //     });
-  //   }
-  // }
 });

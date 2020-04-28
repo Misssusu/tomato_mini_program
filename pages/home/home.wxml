@@ -1,14 +1,5 @@
 <view wx:if="{{!working}}">
   <view class="home-wrapper">
-    <!--  <view class="navBar">-->
-    <!--    <view class="nav-tip">-->
-    <!--      <view class="nav-hello">早上好 !</view>-->
-    <!--      <text>2019-12-18</text>-->
-    <!--    </view>-->
-    <!--    <view class="addTask" bindtap="showPopup">-->
-    <!--      <text class="iconfont icon-add"></text>-->
-    <!--    </view>-->
-    <!--  </view>-->
     <scroll-view class="list-wrapper" scroll-y="true" enable-flex>
       <view class="item"
             class="{{selectTab === item.id ? 'item active'  : 'item'}}"
@@ -37,10 +28,6 @@
       </view>
       <image src="../../images/tomato-bg.png" class="binding-bg"></image>
     </view>
-<!--    <view class="tipMessage">{{tipMessage}}</view>-->
-    <!--  <view class="clock-wrapper">-->
-    <!--    <g-clock message="点击开始" bindtap="startWork"></g-clock>-->
-    <!--  </view>-->
     <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
     <view wx:if="{{updateVisible}}">
       <g-pop-up popUpMessage="{{newsTodo}}" bindconfirm="confirmUpdate" bindcancel="updateCancel"></g-pop-up>
