@@ -1,10 +1,10 @@
 <view class="home-wrapper">
-  <scroll-view class="list-wrapper" scroll-y="true">
+  <scroll-view class="list-wrapper" scroll-y="true" enable-flex>
     <view class="item"
-          lass="{{selectTab === item.id ? 'item active'  : 'item'}}"
+          class="{{selectTab === item.id ? 'item active'  : 'item'}}"
           wx:for="{{lists}}"
           wx:for-item="item"
-          wx:key="{{item.id}}"
+          wx:key="id"
           wx:for-index="index"
           wx:if="{{!item.completed}}"
     >
@@ -13,14 +13,24 @@
             data-index="{{index}}"
             data-id="{{item.id}}"
       ></view>
-      <text class="item-message">{{item.description}}</text>
+      <view class="item-message">
+        <text class="item-description" data-index="{{index}}"
+              data-id="{{item.id}}"
+              bindtap="updateTodo">{{item.description}}
+        </text>
+        <text class="iconfont icon-clock-2" bindtap="startWork"></text>
+      </view>
     </view>
   </scroll-view>
-  <view class="home-button-wrapper">
-    <g-button text="创建任务" bindtap="showPopup"></g-button>
+  <view class="btn-wrapper">
+    <view class="home-button-wrapper">
+      <g-button text="创建任务" type="change" bindtap="showPopup"></g-button>
+    </view>
+    <image src="../../images/tomato-bg.png" class="binding-bg"></image>
   </view>
-  <view class="clock-wrapper">
-    <g-clock message="点击开始" bindtap="startWork"></g-clock>
+  <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称"
+            wx:if="{{visibile}}"></g-pop-up>
+  <view wx:if="{{updateVisible}}">
+    <g-pop-up popUpMessage="{{newsTodo}}" bindconfirm="confirmUpdate" bindcancel="updateCancel"></g-pop-up>
   </view>
-  <g-pop-up bindconfirm="confirm" bindcancel="hidePopup" loading="{{loading}}" placeholder="任务名称" wx:if="{{visibile}}"></g-pop-up>
 </view>

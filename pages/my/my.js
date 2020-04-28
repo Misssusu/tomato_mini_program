@@ -16,7 +16,7 @@ Page({
     this.fetchTodos()
   },
   fetchTomatoes() { //完成的任务
-    http.get('/tomatoes', { is_group: "yes" })
+    http.get('/todos', { is_group: "yes" })
       .then(response => {
         console.log(response);
         this.setData({ tomatoes: response.data.resources,refreshing: false,loadingMore: false });
@@ -57,19 +57,6 @@ Page({
         this.setData({tab: 1});
         break
     }
-  },
-  refreshData(){
-    wx.startPullDownRefresh();
-    wx.showNavigationBarLoading();
-    this.setData({refreshing: true});
-    console.log('下拉刷新');
-    this.fetchTomatoes();
-  },
-  loadMoreData(){
-    wx.showNavigationBarLoading();
-    this.setData({loadingMore: true});
-    console.log('上拉加载');
-    this.fetchTomatoes();
   },
   onShareAppMessage(){
     return transMit;

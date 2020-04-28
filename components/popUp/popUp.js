@@ -11,7 +11,7 @@ Component({
     loading: {
       type: Boolean,
       value: false
-    }
+    },
   },
   data: {
     value: ""

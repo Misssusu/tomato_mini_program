@@ -33,7 +33,7 @@
   flex: 1;
   text-align: right;
   color: #F6705A;
-  font-size: 20rpx;
+  font-size: 24rpx;
   background: transparent;
 }
 .feedback:after {
@@ -41,6 +41,7 @@
 }
 .my-content {
   margin-top: 23rpx;
+  background: #F6F6F6;
 }
 .my-nav {
   display: flex;
@@ -59,22 +60,27 @@
   color: #F6705A;
 }
 .my-list {
-  height: 790rpx;
+  height: 800rpx;
+  overflow: scroll;
+  padding: 0 24rpx;
+  box-sizing: border-box;
 }
 .my-list-item {
   width: 610rpx;
   margin: 0 auto;
   background: #fff;
-  padding: 24rpx 40rpx;
-  margin-top: 23rpx;
-  box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.10);
+  padding: 16rpx 28rpx 35rpx 40rpx;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 1rpx 2rpx 6rpx 4rpx rgba(0,0,0,0.10);
 }
 .my-list-item:last-child {
   margin-bottom: 23rpx;
 }
 .my-list-item-week {
-  font-size: 36rpx;
-  color: #333333;
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-bottom: 24rpx;
 }
 .my-list-item-detail {
   margin-top: 20rpx;
@@ -112,4 +118,5 @@
   text-align: center;
   padding: 30rpx;
   color: #333333;
+  font-size: 14px;
 }

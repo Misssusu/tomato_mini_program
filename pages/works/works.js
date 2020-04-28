@@ -7,19 +7,17 @@ Page({
   data: {
     time: "",
     tomato: {},
-    defaultTime: 1500,
+    defaultTime: 5,
     timerStatus: "暂停",
     visible: false,
-    again: false,
-    reasons: "",
-    type: ""
+    completed: false
   },
   onShow() {
     http.post('/tomatoes').then(response => {
       this.data.tomato = response.data.resource;
-      console.log(this.data.tomato);
     })
     if(this.data.defaultTime){
+      wx.vibrateLong({});
       this.startTimer()
     }
   },
@@ -28,9 +26,8 @@ Page({
     this.timer = setInterval(() => {
       if (this.data.defaultTime <= 0) {
         wx.vibrateLong({});
-        this.setData({again: true})
+        this.setData({completed: true})
         this.stopTimer();
-        this.showPopup('event','finished');
         return
       }
       this.changeTimer();
@@ -62,39 +59,15 @@ Page({
   stopTimer() {
     clearInterval(this.timer);
   },
-  showPopup(event,type) {
-    console.log(type);
-    if(type){
-      this.data.type = type;
-    }else {
-      console.log(event);
-      this.data.type = event.currentTarget.dataset.type;
-    }
-    switch (this.data.type) {
-      case "abandon":
-        this.data.reasons = "放弃理由";
-        this.setData({reasons: this.data.reasons})
-        break
-      case "finished":
-        this.data.reasons = "完成了什么";
-        this.setData({reasons: this.data.reasons})
-        break
-    }
+  showPopup() {
+    this.stopTimer();
     this.setData({visible: true})
   },
   confirm(event) {
     let content = event.detail;
-    let aborted;
-    if(this.data.type === "abandon"){
-      aborted = true;
-    }else if(this.data.type === "finished"){
-      aborted = false;
-    }
-    debugger
-
     http.put(`/tomatoes/${this.data.tomato.id}`, {
       description: content,
-      aborted: aborted
+      aborted: true
     })
       .then(response => {
         wx.reLaunch({ url : '/pages/home/home'})
@@ -106,15 +79,14 @@ Page({
       this.startTimer();
     }
   },
-  startAgain() {
-    this.data.defaultTime = 1500;
-    this.startTimer();
-    this.setData({again: false})
+  backToHomePage() {
+    wx.navigateBack({})
   },
   onHide() {
+    console.log(this.data.tomato);
     if (this.data.defaultTime) {
       this.stopTimer()
-      http.put(`/tomatoes/${this.tomato.id}`, {
+      http.put(`/tomatoes/${this.data.tomato.id}`, {
         description: "退出放弃",
         aborted: true
       })
@@ -123,7 +95,7 @@ Page({
   onUnload() {
     if (this.data.defaultTime) {
       this.stopTimer()
-      http.put(`/tomatoes/${this.tomato.id}`, {
+      http.put(`/tomatoes/${this.data.tomato.id}`, {
         description: "退出放弃",
         aborted: true
       })
