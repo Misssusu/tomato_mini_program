@@ -7,7 +7,7 @@ Page({
   data: {
     time: "",
     tomato: {},
-    defaultTime: 5,
+    defaultTime: 1500,
     timerStatus: "暂停",
     visible: false,
     completed: false
