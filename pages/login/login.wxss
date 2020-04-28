@@ -6,20 +6,17 @@
   align-items: center;
 }
 .login-avatar {
-  width: 250rpx;
-  height: 250rpx;
+  width: 270rpx;
+  height: 270rpx;
   border-radius: 50%;
   overflow: hidden;
-  display: flex;
-  text-align: center;
   border: 16rpx solid #F6705A;
   margin-top: 283rpx;
 }
 .login-name {
-  font-size: 32rpx;
-  color: #F6705A;
+  font-size: 39rpx;
   position: relative;
-  top: 22rpx;
+  top: 32rpx;
   width: 100%;
   text-align: center;
 }
@@ -34,7 +31,7 @@
   background: #F6705A;
 }
 .login-btn {
-  margin-top: 90rpx;
+  margin-top: 100rpx;
 }
 .login-btn button {
   color: #fff;

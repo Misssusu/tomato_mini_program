@@ -28,7 +28,6 @@
   margin-bottom: 20rpx;
 }
 .addTask {
-  /*width: 650rpx;*/
   flex: 1;
   padding-right: 70rpx;
   text-align: right;
@@ -44,12 +43,9 @@
   display: flex;
   align-items: center;
   background: #fff;
-  /*width: 100%;*/
-  /*margin-left: 30rpx;*/
   width: 650rpx;
   padding: 20rpx 20rpx;
   border: 2rpx solid #f6f6f6;
-  /*border-bottom: 1px solid #e8e8e8;*/
   border-radius: 16rpx;
   margin-top: 20rpx;
   box-shadow: 0rpx 2rpx 6rpx 0rpx rgba(0,0,0,0.10);
@@ -60,30 +56,16 @@
   transition: all 1s ease-out;
 }
 .select {
-  width: 30rpx;
-  height: 30rpx;
+  width: 38rpx;
+  height: 38rpx;
   border: 4rpx solid #F8765D;
   border-radius: 50%;
-  /*margin-right: 20rpx;*/
   margin: 0 30rpx;
-  /*position: relative;*/
-  /*top: 52rpx;*/
 }
 .select.active {
   background: #FE996F;
   transition: all 1s ease-out;
 }
-/*.select.active::before {*/
-/*  content: "";*/
-/*  width: 15rpx;*/
-/*  height: 15rpx;*/
-/*  background: #F8765D;*/
-/*  border-radius: 50%;*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: 50%;*/
-/*  transform: translate(-50%,-50%);*/
-/*}*/
 .item-message {
   flex: 1;
   color: #333;
@@ -91,7 +73,6 @@
   align-items: center;
 }
 .item-description {
-  font-size: 35rpx;
   width: 90%;
   text-overflow: ellipsis;
   overflow: hidden;
