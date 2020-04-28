@@ -33,7 +33,7 @@
   flex: 1;
   text-align: right;
   color: #F6705A;
-  font-size: 20rpx;
+  font-size: 24rpx;
   background: transparent;
 }
 .feedback:after {
@@ -61,13 +61,17 @@
 }
 .my-list {
   height: 800rpx;
+  overflow: scroll;
+  padding: 0 24rpx;
+  box-sizing: border-box;
 }
 .my-list-item {
   width: 610rpx;
   margin: 0 auto;
   background: #fff;
-  padding: 24rpx 40rpx;
-  margin-top: 23rpx;
+  padding: 16rpx 28rpx 35rpx 40rpx;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
   box-shadow: 1rpx 2rpx 6rpx 4rpx rgba(0,0,0,0.10);
 }
 .my-list-item:last-child {
