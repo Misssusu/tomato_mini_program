@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "g-popup-message": "../../components/popupMessage/popupMessage"
+  },
   "enablePullDownRefresh": true,
   "backgroundColor": "#F87A5F"
 }

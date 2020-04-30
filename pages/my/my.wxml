@@ -58,4 +58,5 @@
 
     </swiper>
   </view>
+  <g-popup-message></g-popup-message>
 </view>
