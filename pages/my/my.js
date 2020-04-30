@@ -15,6 +15,16 @@ Page({
     this.fetchTomatoes()
     this.fetchTodos()
   },
+  login() {
+    wx.getSetting({
+      success(res){
+        console.log(res.authSetting);
+      }
+    })
+    // wx.navigateTo({
+    //   url: '/pages/login/login'
+    // })
+  },
   fetchTomatoes() { //完成的任务
     http.get('/todos', { is_group: "yes" })
       .then(response => {

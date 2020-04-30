@@ -1,5 +1,9 @@
 <view class="home-wrapper">
   <scroll-view class="list-wrapper" scroll-y="true" enable-flex>
+    <view class="task" wx:if="{{lists !== ''}}">
+      <view class="iconfont icon-task1 task-icon"></view>
+      <view class="tipMessage">点击按钮创建任务吧</view>
+    </view>
     <view class="item"
           class="{{selectTab === item.id ? 'item active'  : 'item'}}"
           wx:for="{{lists}}"

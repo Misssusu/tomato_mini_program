@@ -109,4 +109,24 @@
   color: #F8765D;
   font-size: 70rpx;
 }
+.task {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+.task-icon {
+  width: 100%;
+  position: absolute;
+  top: 300rpx;
+  text-align: center;
+  font-size: 140rpx;
+  color: #ccc;
+}
+.tipMessage {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 100rpx;
+}
 
