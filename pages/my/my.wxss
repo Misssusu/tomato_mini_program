@@ -17,6 +17,17 @@
   color: #F6705A;
   font-size: 20rpx;
 }
+.my-avatar-no-login {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.no-login-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  opacity: 0.5;
+}
 .my-avatar {
   width: 120rpx;
   height: 120rpx;
@@ -27,7 +38,6 @@
   border-radius: 50%;
   display: flex;
   overflow:hidden;
-  text-align: center;
 }
 .feedback {
   flex: 1;

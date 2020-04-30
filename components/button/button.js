@@ -12,11 +12,5 @@ Component({
       type: String,
       value: ''
     }
-  },
-  methods: {
-    // showPopup() {
-    //   console.log('click clock');
-    //   this.triggerEvent('showPopup');
-    // }
   }
 });

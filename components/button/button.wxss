@@ -22,5 +22,6 @@
   width: 360rpx;
 }
 .button.hoverActive {
-  border: 4rpx solid #F6705A;
+  opacity: 0;
+  transition: all 1s;
 }

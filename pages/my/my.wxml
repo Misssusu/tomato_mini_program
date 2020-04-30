@@ -1,11 +1,17 @@
 <view class="my-wrapper">
   <view class="my-info">
-    <view class="my-avatar">
-      <open-data type="userAvatarUrl" class="my-avatar-img"></open-data>
+    <view class="my-avatar-no-login">
+      <image src="../../images/tomato.png" class="no-login-img"></image>
     </view>
-    <view class="my-detail">
-      <open-data type="userNickName" class="userName"></open-data>
-    </view>
+    <button open-type="getUserInfo" bindtap="login" withCredentials="true">点击登录</button>
+<!--    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">点击登录</button>-->
+    <!--    <view class="my-detail">点击登录</view>-->
+<!--    <view class="my-avatar">-->
+<!--      <open-data type="userAvatarUrl" class="my-avatar-img"></open-data>-->
+<!--    </view>-->
+<!--    <view class="my-detail">-->
+<!--      <open-data type="userNickName" class="userName"></open-data>-->
+<!--    </view>-->
     <button class="feedback" open-type="contact">问题反馈</button>
   </view>
   <view class="my-content">

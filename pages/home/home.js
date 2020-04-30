@@ -22,7 +22,6 @@ Page({
   getLists() {
     http.get('/todos?completed = false')
       .then((response) => {
-        console.log(response.data.resources);
         if (response.data.resources.length > 0) {
           this.data.lists = response.data.resources;
           this.setData({ lists: this.data.lists });
@@ -49,7 +48,7 @@ Page({
   completedTodo(event) {
     let { id, index } = event.currentTarget.dataset;
     this.setData({ selectTab: id });
-    setTimeout(()=>{
+    setTimeout(() => {
       http.put(`/todos/${id}`, {
         completed: true
       }).then(res => {
@@ -64,39 +63,39 @@ Page({
           duration: 1000
         });
       });
-    },1000)
+    }, 1000);
   },
   //更新
   updateTodo(event) {
     this.data.updateVisible = true;
     let { id, index } = event.currentTarget.dataset;
-    this.updateId =id;
+    this.updateId = id;
     let description = this.data.lists[index].description;
     console.log(description);
-    this.setData({ updateVisible: true, newsTodo: description});
+    this.setData({ updateVisible: true, newsTodo: description });
     console.log(this.data.updateVisible);
   },
   confirmUpdate(event) {
     console.log(event);
     let description = event.detail;
-    if (description){
+    if (description) {
       let description = event.detail;
       http.put(`/todos/${this.updateId}`, {
         description: description
       }).then(res => {
         this.getLists();
-        this.setData({ updateVisible: false});
+        this.setData({ updateVisible: false });
         wx.showToast({
           title: '修改成功',
           icon: 'success',
           duration: 1000
-        })
-      })
+        });
+      });
     }
-    this.setData({ updateVisible: false});
+    this.setData({ updateVisible: false });
   },
   updateCancel() {
-    this.setData({ updateVisible: false});
+    this.setData({ updateVisible: false });
   },
   hidePopup() {
     this.setData({ visibile: false });
@@ -106,8 +105,8 @@ Page({
   },
   startWork() {
     wx.navigateTo({
-      url: "/pages/works/works"
-    })
+      url: '/pages/works/works'
+    });
   },
   onShareAppMessage() {
     return transMit;
