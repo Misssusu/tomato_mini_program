@@ -6,7 +6,7 @@
     </view>
     <view class="btns">
       <button class="confirm" bindtap="confirm" hover-class="hoverActive">暂不登录</button>
-      <button class="cancel" bindtap="cancel" hover-class="hoverActive">立即登录</button>
+      <button class="cancel" bindtap="cancel" open-type="getUserInfo" hover-class="hoverActive">立即登录</button>
     </view>
   </view>
 </view>

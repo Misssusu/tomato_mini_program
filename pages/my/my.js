@@ -8,8 +8,6 @@ Page({
     tab: 0,
     tomatoes: {},
     todos: {},
-    refreshing: false,
-    loadingMore: false
   },
   onShow: function () {
     this.fetchTomatoes()
@@ -25,11 +23,17 @@ Page({
     //   url: '/pages/login/login'
     // })
   },
+  cancelLogin() {
+
+  },
+  showPopupMessage() {
+
+  },
   fetchTomatoes() { //完成的任务
     http.get('/todos', { is_group: "yes" })
       .then(response => {
         console.log(response);
-        this.setData({ tomatoes: response.data.resources,refreshing: false,loadingMore: false });
+        this.setData({ tomatoes: response.data.resources });
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
       })
