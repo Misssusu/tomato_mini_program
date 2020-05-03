@@ -8,28 +8,28 @@ Page({
     tab: 0,
     tomatoes: {},
     todos: {},
-    refreshing: false,
-    loadingMore: false
+    showLogin: false
   },
   onShow: function () {
     this.fetchTomatoes()
     this.fetchTodos()
   },
   login() {
-    wx.getSetting({
-      success(res){
-        console.log(res.authSetting);
-      }
+    wx.navigateTo({
+      url: '/pages/login/login'
     })
-    // wx.navigateTo({
-    //   url: '/pages/login/login'
-    // })
+  },
+  cancelLogin() {
+    this.setData({ showLogin: false});
+  },
+  showPopupMessage() {
+    this.setData({ showLogin: true});
   },
   fetchTomatoes() { //完成的任务
     http.get('/todos', { is_group: "yes" })
       .then(response => {
         console.log(response);
-        this.setData({ tomatoes: response.data.resources,refreshing: false,loadingMore: false });
+        this.setData({ tomatoes: response.data.resources });
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
       })

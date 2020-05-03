@@ -1,0 +1,12 @@
+<view class="popup-message-wrapper">
+  <view class="popup-message">
+    <view class="tip-message">
+      <view class="tip-1">您还未登录</view>
+      <view class="tip-2">请先登录再进行操作</view>
+    </view>
+    <view class="btns">
+      <button class="confirm" bindtap="cancel" hover-class="hoverActive">暂不登录</button>
+      <button class="cancel" bindtap="confirm" open-type="getUserInfo" hover-class="hoverActive">去登录</button>
+    </view>
+  </view>
+</view>
