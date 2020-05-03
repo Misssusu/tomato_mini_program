@@ -8,26 +8,22 @@ Page({
     tab: 0,
     tomatoes: {},
     todos: {},
+    showLogin: false
   },
   onShow: function () {
     this.fetchTomatoes()
     this.fetchTodos()
   },
   login() {
-    wx.getSetting({
-      success(res){
-        console.log(res.authSetting);
-      }
+    wx.navigateTo({
+      url: '/pages/login/login'
     })
-    // wx.navigateTo({
-    //   url: '/pages/login/login'
-    // })
   },
   cancelLogin() {
-
+    this.setData({ showLogin: false});
   },
   showPopupMessage() {
-
+    this.setData({ showLogin: true});
   },
   fetchTomatoes() { //完成的任务
     http.get('/todos', { is_group: "yes" })

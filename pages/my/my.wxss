@@ -130,3 +130,6 @@
   color: #333333;
   font-size: 14px;
 }
+.showPopupMessage {
+  margin-left: 10rpx;
+}

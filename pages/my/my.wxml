@@ -3,7 +3,7 @@
     <view class="my-avatar-no-login">
       <image src="../../images/tomato.png" class="no-login-img"></image>
     </view>
-    <view bindtap="showPopupMessage">点击登录</view>
+    <view class="showPopupMessage" bindtap="showPopupMessage">点击登录</view>
 <!--    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">点击登录</button>-->
     <!--    <view class="my-detail">点击登录</view>-->
 <!--    <view class="my-avatar">-->
@@ -58,7 +58,7 @@
 
     </swiper>
   </view>
-  <view>
-    <g-popup-message bindConfirm="login" bindCancel="cancelLogin"></g-popup-message>
+  <view wx:if="{{showLogin}}">
+    <g-popup-message bindconfirm="login" bindcancel="cancelLogin"></g-popup-message>
   </view>
 </view>
