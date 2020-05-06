@@ -2,6 +2,7 @@
   "usingComponents": {
     "g-button": "../../components/button/button",
     "g-clock": "../../components/clock/clock",
-    "g-pop-up": "../../components/popUp/popUp"
+    "g-pop-up": "../../components/popUp/popUp",
+    "g-popup-message": "../../components/popupMessage/popupMessage"
   }
 }

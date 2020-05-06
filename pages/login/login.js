@@ -7,7 +7,15 @@ Page({
   data:{
     imgsrc: "",
     loading: false,
-    errorTip: false
+    errorTip: false,
+    Login: false
+  },
+  onShow(){
+    if (wx.getStorageSync('X-token')) {
+      this.setData({ Login: true });
+    }else {
+      this.setData({ Login: false});
+    }
   },
   login(event){
     this.setData({loading: true, errorTip: false});

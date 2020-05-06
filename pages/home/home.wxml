@@ -1,6 +1,6 @@
 <view class="home-wrapper">
   <scroll-view class="list-wrapper" scroll-y="true" enable-flex>
-    <view class="task" wx:if="{{lists !== ''}}">
+    <view class="task" wx:if="{{lists === ''}}">
       <view class="iconfont icon-task1 task-icon"></view>
       <view class="tipMessage">点击按钮创建任务吧</view>
     </view>
@@ -36,5 +36,8 @@
             wx:if="{{visibile}}"></g-pop-up>
   <view wx:if="{{updateVisible}}">
     <g-pop-up popUpMessage="{{newsTodo}}" bindconfirm="confirmUpdate" bindcancel="updateCancel"></g-pop-up>
+  </view>
+  <view wx:if="{{showLoginMessage}}">
+    <g-popup-message bindconfirm="login" bindcancel="cancelLogin"></g-popup-message>
   </view>
 </view>

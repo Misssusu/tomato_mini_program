@@ -8,10 +8,15 @@ Page({
     tab: 0,
     tomatoes: {},
     todos: {},
-    showLogin: false
+    showLogin: false,
+    Login: false
   },
   onShow: function () {
-    this.fetchTomatoes()
+    if (wx.getStorageSync('X-token')) {
+      this.setData({ Login: true });
+    }else {
+      this.setData({ Login: false});
+    }
     this.fetchTodos()
   },
   login() {
@@ -24,15 +29,6 @@ Page({
   },
   showPopupMessage() {
     this.setData({ showLogin: true});
-  },
-  fetchTomatoes() { //完成的任务
-    http.get('/todos', { is_group: "yes" })
-      .then(response => {
-        console.log(response);
-        this.setData({ tomatoes: response.data.resources });
-        wx.hideNavigationBarLoading();
-        wx.stopPullDownRefresh();
-      })
   },
   fetchTodos() {//番茄历史
     http.get('/todos',{

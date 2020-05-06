@@ -5,6 +5,17 @@
   flex-direction: column;
   align-items: center;
 }
+.my-avatar-no-login {
+  width: 270rpx;
+  height: 270rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 16rpx solid #F6705A;
+  margin-top: 283rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
 .login-avatar {
   width: 270rpx;
   height: 270rpx;
@@ -13,7 +24,7 @@
   border: 16rpx solid #F6705A;
   margin-top: 283rpx;
 }
-.login-name {
+.login-name, .showPopupMessage {
   font-size: 39rpx;
   position: relative;
   top: 32rpx;

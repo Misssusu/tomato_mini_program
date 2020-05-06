@@ -1,0 +1,9 @@
+<view class="error">
+  <view class="error-tip">
+    <icon type="warn" size="90"></icon>
+    <view class="tip-message">登录过期，请重新登录</view>
+  </view>
+  <view class="login-btn">
+    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">登录</button>
+  </view>
+</view>

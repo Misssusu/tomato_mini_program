@@ -14,6 +14,7 @@ Page({
     tipMessage: '',
     updateVisible: false,
     newsTodo: '',
+    showLoginMessage: false
   },
   onShow() {
     this.getLists();
@@ -26,7 +27,14 @@ Page({
           this.data.lists = response.data.resources;
           this.setData({ lists: this.data.lists });
         }
-      });
+      }).catch(err => {
+        if (err.statusCode === 422) {
+          wx.navigateTo({
+            url: '/pages/error/error'
+          });
+        }
+        console.log(err);
+    });
   },
   confirm(event) {
     let value = event.detail;
@@ -41,7 +49,14 @@ Page({
           this.data.lists = todo.concat(this.data.lists);
           this.setData({ lists: this.data.lists, loading: false });
           this.hidePopup();
-        });
+        }).catch(err => {
+        if (err.statusCode === 422) {
+          wx.navigateTo({
+            url: '/pages/error/error'
+          });
+        }
+        console.log(err);
+      });
     }
   },
   //删除
@@ -62,6 +77,8 @@ Page({
           icon: 'success',
           duration: 1000
         });
+      }).catch(err => {
+        console.log(err);
       });
     }, 1000);
   },
@@ -101,7 +118,19 @@ Page({
     this.setData({ visibile: false });
   },
   showPopup() {
-    this.setData({ visibile: true });
+    if (wx.getStorageSync('X-token')) {
+      this.setData({ visibile: true });
+    } else {
+      this.setData({ showLoginMessage: true });
+    }
+  },
+  login() {
+    wx.navigateTo({
+      url: '/pages/login/login'
+    });
+  },
+  cancelLogin() {
+    this.setData({ showLoginMessage: false });
   },
   startWork() {
     wx.navigateTo({
