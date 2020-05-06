@@ -4,6 +4,6 @@
     <view class="tip-message">登录过期，请重新登录</view>
   </view>
   <view class="login-btn">
-    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">登录</button>
+    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">去登录</button>
   </view>
 </view>
