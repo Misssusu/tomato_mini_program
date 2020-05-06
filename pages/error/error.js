@@ -1,6 +1,6 @@
 Page({
   login(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '/pages/login/login'
     })
   }
