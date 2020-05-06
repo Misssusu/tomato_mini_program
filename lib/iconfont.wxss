@@ -35,7 +35,7 @@
   content: "\e62b";
 }
 
-.icon-clock-:before {
+.icon-clock-2:before {
   content: "\e621";
 }
 

@@ -1,17 +1,19 @@
 <view class="my-wrapper">
   <view class="my-info">
-    <view class="my-avatar-no-login">
-      <image src="../../images/tomato.png" class="no-login-img"></image>
-    </view>
-    <view class="showPopupMessage" bindtap="showPopupMessage">点击登录</view>
-<!--    <button bindgetuserinfo="login" open-type="getUserInfo" withCredentials="true" loading="{{loading}}">点击登录</button>-->
-    <!--    <view class="my-detail">点击登录</view>-->
-<!--    <view class="my-avatar">-->
-<!--      <open-data type="userAvatarUrl" class="my-avatar-img"></open-data>-->
-<!--    </view>-->
-<!--    <view class="my-detail">-->
-<!--      <open-data type="userNickName" class="userName"></open-data>-->
-<!--    </view>-->
+    <block wx:if="{{!Login}}">
+      <view class="my-avatar-no-login">
+        <image src="../../images/tomato.png" class="no-login-img"></image>
+      </view>
+      <view class="showPopupMessage" bindtap="showPopupMessage">点击登录</view>
+    </block>
+    <block wx:if="{{Login}}">
+      <view class="my-avatar">
+        <open-data type="userAvatarUrl" class="my-avatar-img"></open-data>
+      </view>
+      <view class="my-detail">
+        <open-data type="userNickName" class="userName"></open-data>
+      </view>
+    </block>
     <button class="feedback" open-type="contact">问题反馈</button>
   </view>
   <view class="my-content">
@@ -36,23 +38,22 @@
               <text class="my-list-item-msg">{{item.description}}</text>
             </view>
           </view>
-          <view  class='tipMessage'>--- 我是有底线的 ---</view>
+          <view  class='tipMessage' wx:if="{{todos !== ''}}">--- 我是有底线的 ---</view>
         </scroll-view>
       </swiper-item>
 
 
       <swiper-item>
         <scroll-view class="my-list" scroll-y="true">
-          <view  class='refreshData' wx:if="{{refreshing}}">正在刷新...</view>
-          <view class="my-list-item" wx:for="{{tomatoes}}"  wx:for-index="key" wx:key="index" wx:for-item="items">
+          <view class="my-list-item" wx:for="{{todos}}"  wx:for-index="key" wx:key="index" wx:for-item="items">
             <wxs src="../../lib/formattor.wxs" module="formattor"></wxs>
             <view class="my-list-item-week">{{formattor.monthFormat(key)}}</view>
-            <view class="my-list-item-detail" wx:for="{{tomatoes[key]}}" wx:for-index="index" wx:key="index">
+            <view class="my-list-item-detail" wx:for="{{todos[key]}}" wx:for-index="index" wx:key="index">
               <text class="my-list-item-time">{{formattor.dateFormat(item.updated_at,"hh:mm")}}</text>
               <text class="my-list-item-msg">{{item.description}}</text>
             </view>
           </view>
-          <view  class='tipMessage'>--- 我是有底线的 ---</view>
+          <view  class='tipMessage' wx:if="{{todos !== ''}}">--- 我是有底线的 ---</view>
         </scroll-view>
       </swiper-item>
 

@@ -4,6 +4,7 @@
     "pages/login/login",
     "pages/my/my",
     "pages/binding/binding",
+    "pages/error/error",
     "pages/works/works"
   ],
   "window": {
