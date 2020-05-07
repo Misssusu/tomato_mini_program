@@ -38,7 +38,7 @@
               <text class="my-list-item-msg">{{item.description}}</text>
             </view>
           </view>
-          <view  class='tipMessage' wx:if="{{todos !== ''}}">--- 我是有底线的 ---</view>
+          <view  class='tipMessage' wx:if="{{showBottomTip}}">--- 我是有底线的 ---</view>
         </scroll-view>
       </swiper-item>
 
@@ -53,7 +53,7 @@
               <text class="my-list-item-msg">{{item.description}}</text>
             </view>
           </view>
-          <view  class='tipMessage' wx:if="{{todos !== ''}}">--- 我是有底线的 ---</view>
+          <view  class='tipMessage' wx:if="{{showBottomTip}}">--- 我是有底线的 ---</view>
         </scroll-view>
       </swiper-item>
 

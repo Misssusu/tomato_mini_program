@@ -45,6 +45,7 @@ Page({
       })
       .catch(error=>{
         console.log(error);
+        this.setData({loading: false});
         this.setData({errorTip: true,loading: false});
       })
   },

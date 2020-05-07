@@ -9,7 +9,8 @@ Page({
     tomatoes: {},
     todos: {},
     showLogin: false,
-    Login: false
+    Login: false,
+    showBottomTip: false
   },
   onShow: function () {
     if (wx.getStorageSync('X-token')) {
@@ -35,7 +36,7 @@ Page({
       is_group: 'yes'
     })
       .then(response => {
-        this.setData({ todos: response.data.resources })
+        this.setData({ todos: response.data.resources, showBottomTip: true })
       })
   },
   changeTab(event){
