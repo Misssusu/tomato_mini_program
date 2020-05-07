@@ -55,6 +55,7 @@ Page({
             url: '/pages/error/error'
           });
         }
+        this.setData({ loading: false });
         console.log(err);
       });
     }

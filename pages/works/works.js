@@ -10,7 +10,8 @@ Page({
     defaultTime: 1500,
     timerStatus: "暂停",
     visible: false,
-    completed: false
+    completed: false,
+    loading: false
   },
   onShow() {
     http.post('/tomatoes').then(response => {
@@ -65,13 +66,18 @@ Page({
   },
   confirm(event) {
     let content = event.detail;
-    http.put(`/tomatoes/${this.data.tomato.id}`, {
-      description: content,
-      aborted: true
-    })
-      .then(response => {
-        wx.reLaunch({ url : '/pages/home/home'})
+    if(content) {
+      this.setData({ loading: true });
+      http.put(`/tomatoes/${this.data.tomato.id}`, {
+        description: content,
+        aborted: true
       })
+        .then(response => {
+          wx.reLaunch({ url : '/pages/home/home'})
+        }).catch((err)=>{
+        this.setData({ loading: false });
+      })
+    }
   },
   cancel() {
     this.setData({ visible: false })
