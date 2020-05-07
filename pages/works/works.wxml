@@ -15,6 +15,6 @@
     </view>
   </view>
   <view wx:if="{{visible}}">
-    <g-pop-up placeholder="放弃理由" bindconfirm="confirm" bindcancel="cancel"></g-pop-up>
+    <g-pop-up placeholder="放弃理由" bindconfirm="confirm" loading="{{loading}}" bindcancel="cancel"></g-pop-up>
   </view>
 </view>
